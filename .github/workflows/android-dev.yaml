@@ -17,7 +17,7 @@ jobs:
 
       - name: Restore Secret File
         run: |
-          mkdir -p lib/remote  # folder မရှိရင် ဆောက်ခိုင်းတာပါ
+          mkdir -p lib/remote
           echo "${{ secrets.BASE_URL_CONFIG }}" | base64 --decode > lib/remote/base_url.dart
       # -----------------------------------
       - name: Setup JDK
@@ -30,7 +30,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: 3.19.0
+          flutter-version: 3.38.5
 
       - name: Install dependencies
         run: flutter pub get
